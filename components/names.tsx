@@ -1,8 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import { FaStarHalf } from 'react-icons/fa'
-import { FaHandSparkles, FaStar, FaWandMagicSparkles, FaWandSparkles } from 'react-icons/fa6'
 
 export default function TheWinnerName({ winnerName }: any) {
   const [winner, setWinner] = useState('')
