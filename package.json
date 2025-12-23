@@ -11,10 +11,11 @@
 		"postinstall": "prisma generate"
 	},
 	"dependencies": {
+		"@ant-design/cssinjs": "^1.18.2",
 		"@ant-design/nextjs-registry": "^1.0.0",
 		"@prisma/adapter-pg": "^7.0.1",
-		"@prisma/client": "^7.0.1",
-		"antd": "^5.19.2",
+		"@prisma/client": "^7.2.0",
+		"antd": "^6.1.1",
 		"nest": "^0.1.6",
 		"next": "^14.2.5",
 		"prisma": "^7.0.1",
