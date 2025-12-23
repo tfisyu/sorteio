@@ -16,7 +16,7 @@ datasource db {
 model Participant {
   id        Int     @id @default(autoincrement())
   name     String
-  number   String
+  number   String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

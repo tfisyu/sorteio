@@ -3,13 +3,21 @@
 @tailwind utilities;
 
 * {
-	background-color: #2c2c2c;
-	color: #d87f7fd1;
+	color: #b4b2ca;
 }
 
 :root {
-	--foreground: #f6f5f2;
-	--background: #232323;
+	/* Inner shadow */
+	--shadow-offset: 0;
+	--shadow-blur: 20px;
+	--shadow-spread: -5px;
+	--shadow-color: #ffffffb3;
+
+	/* Background frost */
+	--frost-blur: 1px;
+
+	/* Outer shadow blur */
+	--outer-shadow-blur: 32px;
 }
 
 @media (prefers-color-scheme: system) {
@@ -19,13 +27,59 @@
 	}
 }
 
-button:disabled {
-	background-color: #d87f7fd1;
-	cursor: not-allowed;
+.bg {
+	background: url('../components/bg.jpg') no-repeat center / cover;
 }
 
-@layer utilities {
-	.text-balance {
-		text-wrap: balance;
-	}
+.botao {
+	border: 2px solid #b4b2ca;
+	padding: 0.5rem 1rem;
+	background-color: #b4b2ca;
+	color: #edf0f7;
+	border-radius: 1rem;
+}
+
+.botao:hover {
+	transition: 0.7s;
+	color: #edf0f7;
+	background-color: #9191a9;
+	border: 2px solid #9191a9;
+}
+
+.glassDiv {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	width: 50%;
+	height: 60%;
+	border-radius: 28px;
+	padding: 3rem;
+	isolation: isolate;
+	box-shadow: 0px 6px var(--outer-shadow-blur) #00000071;
+}
+
+.glassDiv::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	border-radius: 28px;
+	box-shadow: inset var(--shadow-offset) var(--shadow-offset) var(--shadow-blur)
+		var(--shadow-spread) var(--shadow-color);
+	background: #edf0f79a;
+}
+
+.glassDiv::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	border-radius: 28px;
+	backdrop-filter: blur(var(--frost-blur));
+	filter: url(#glass-distortion);
+	isolation: isolate;
+	-webkit-backdrop-filter: blur(var(--frost-blur));
+	-webkit-filter: url('#glass-distortion');
 }

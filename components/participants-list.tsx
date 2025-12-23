@@ -14,7 +14,6 @@ export default async function ParticipantsList() {
         <tr>
           <th className='py-3 px-6 text-xl'>id</th>
           <th className='py-3 px-6 text-xl'>nome</th>
-          <th className='py-3 px-6 text-xl'>número</th>
           <th className='py-3 px-6 text-xl'>ação</th>
         </tr>
       </thead>
@@ -23,7 +22,6 @@ export default async function ParticipantsList() {
           <tr key={participant.id} className='bg-white border-b'>
             <td className='py-3 px-6 text-2xl text-black'>{participant.id}</td>
             <td className='py-3 px-6 text-2xl text-black'>{participant.name}</td>
-            <td className='py-3 px-6 text-2xl text-black'>{participant.number}</td>
             <td className='flex flex-row justify-center items-center gap-1 py-3 text-2xl text-black'>
               <Button className='mx-2'>
                 <Link href={`/participants/${participant.id}`}>
